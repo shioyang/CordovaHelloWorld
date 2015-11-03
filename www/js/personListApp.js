@@ -6,7 +6,7 @@
 
 		this.person = null;
 
-		this.loadPerson = function() {
+		this.loadPersons = function() {
 			this.persons = PersonFactory.loadPersons();
 		};
 
@@ -26,7 +26,7 @@
 		};
 
 		// init
-		this.loadPerson();
+		this.loadPersons();
 		this.resetPerson();
 	}]);
 
