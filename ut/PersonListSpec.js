@@ -7,7 +7,7 @@ describe('PersonList', function() {
 		$controller = _$controller_;
 	}));
 
-	function PersonsFactoryMock() {
+	function PersonFactoryMock() {
 		return {
 			loadPersons: function() {
 				return [
@@ -33,14 +33,30 @@ describe('PersonList', function() {
 						memo: "ccc is ccc."
 					}
 				];
+			},
+
+			savePersons: function(persons) {
 			}
 		};
 	};
 
 	it('should load persons.', function() {
-		var personList = $controller('PersonList', { PersonsFactory: PersonsFactoryMock() });
+		var personList = $controller('PersonList', { PersonFactory: PersonFactoryMock() });
 		personList.loadPersons();
 		expect( personList.persons[0].name ).toEqual("aaa AAA");
+	});
+
+	it('should add person.', function() {
+		var personList = $controller('PersonList', { PersonFactory: PersonFactoryMock() });
+		personList.person = {
+			name: "first last",
+			role: "role",
+			place: "place",
+			country: "country",
+			memo: "memo memo"
+		};
+		personList.addPerson();
+		expect( personList.persons[personList.persons.length - 1].name ).toEqual("first last");
 	});
 
 });
