@@ -12,6 +12,7 @@
 
 		this.addPerson = function() {
 			this.persons.push(this.person);
+			PersonFactory.savePersons(this.persons);
 			this.resetPerson();
 		};
 
@@ -23,6 +24,16 @@
 				country: "",
 				memo: ""
 			};
+		};
+
+		this.deletePerson = function(name) {
+			var newPersons = [];
+			angular.forEach(this.persons, function(p, index) {
+				if (p.name !== name)
+					newPersons.push(p);
+			});
+			this.persons = newPersons;
+			this.savePersons();
 		};
 
 		// init
