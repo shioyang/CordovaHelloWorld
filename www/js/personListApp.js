@@ -5,6 +5,7 @@
 		this.persons = [];
 
 		this.person = null;
+		this.selectedPerson = null;
 
 		this.loadPersons = function() {
 			this.persons = PersonFactory.loadPersons();
@@ -12,8 +13,12 @@
 
 		this.addPerson = function() {
 			this.persons.push(this.person);
-			PersonFactory.savePersons(this.persons);
+			this.savePersons();
 			this.resetPerson();
+		};
+
+		this.savePersons = function() {
+			PersonFactory.savePersons(this.persons);
 		};
 
 		this.resetPerson = function() {
@@ -26,7 +31,12 @@
 			};
 		};
 
-		this.deletePerson = function(name) {
+		this.selectPerson = function(person) {
+			this.selectedPerson = person;
+		};
+
+		this.deleteSelectedPerson = function() {
+			var name = this.selectedPerson.name;
 			var newPersons = [];
 			angular.forEach(this.persons, function(p, index) {
 				if (p.name !== name)
@@ -34,6 +44,7 @@
 			});
 			this.persons = newPersons;
 			this.savePersons();
+			this.selectedPerson = null;
 		};
 
 		// init

@@ -46,7 +46,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="person in personList.persons">
+				<tr ng-repeat="person in personList.persons" ng-click="personList.selectPerson(person)" ng-class="{active: person == personList.selectedPerson}">
 					<td>{{person.name}}</td>
 					<td>{{person.role}}</td>
 					<td>{{person.place}}</td>
@@ -55,5 +55,8 @@
 				</tr>
 			</tbody>
 		</table>
+		<div>
+			<button ng-click="personList.deleteSelectedPerson()" ng-disabled="personList.selectedPerson === null">Delete</button>
+		</div>
 	</body>
 </html>

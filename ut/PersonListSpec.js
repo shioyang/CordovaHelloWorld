@@ -59,5 +59,30 @@ describe('PersonList', function() {
 		expect( personList.persons[personList.persons.length - 1].name ).toEqual("first last");
 	});
 
+	it('should save persons.', function() {
+		var personList = $controller('PersonList', { PersonFactory: PersonFactoryMock() });
+		personList.savePersons();
+	});
+
+	it('should reset person.', function() {
+		var personList = $controller('PersonList', { PersonFactory: PersonFactoryMock() });
+		personList.person = {
+			name: "first last",
+			role: "role",
+			place: "place",
+			country: "country",
+			memo: "memo memo"
+		};
+		personList.resetPerson();
+		expect( personList.person.name ).toEqual("");
+	});
+
+	it('should select person.', function() {
+		var personList = $controller('PersonList', { PersonFactory: PersonFactoryMock() });
+		personList.loadPersons();
+		personList.selectPerson(personList.persons[0]);
+		expect( personList.selectedPerson.name ).toEqual("aaa AAA");
+	});
+
 });
 
