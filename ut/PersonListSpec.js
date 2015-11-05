@@ -84,5 +84,13 @@ describe('PersonList', function() {
 		expect( personList.selectedPerson.name ).toEqual("aaa AAA");
 	});
 
+	it('should delete selected person.', function() {
+		var personList = $controller('PersonList', { PersonFactory: PersonFactoryMock() });
+		personList.loadPersons();
+		personList.selectPerson(personList.persons[0]);
+		personList.deleteSelectedPerson();
+		expect( personList.persons[0].name ).toEqual("bbb BBB");
+	});
+
 });
 
