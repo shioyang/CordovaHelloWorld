@@ -46,7 +46,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="person in personList.persons" ng-click="personList.selectPerson(person)" ng-class="{active: person == personList.selectedPerson}">
+				<tr ng-repeat="person in personList.persons | orderBy: 'name'" ng-click="personList.selectPerson(person)" ng-class="{active: person == personList.selectedPerson}">
 					<td>{{person.name}}</td>
 					<td>{{person.role}}</td>
 					<td>{{person.place}}</td>
