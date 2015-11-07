@@ -38,15 +38,15 @@
 		<table style="padding-top: 20px;">
 			<thead>
 				<tr>
-					<th ng-click="sortKey = 'name'">Name</th>
-					<th ng-click="sortKey = 'role'">Role</th>
-					<th ng-click="sortKey = 'place'">Place</th>
-					<th ng-click="sortKey = 'country'">Country</th>
-					<th ng-click="sortKey = 'memo'">Memo</th>
+					<th ng-click="reverse = (sortKey === 'name') ? !reverse : false; sortKey = 'name'">Name</th>
+					<th ng-click="reverse = (sortKey === 'role') ? !reverse : false; sortKey = 'role'">Role</th>
+					<th ng-click="reverse = (sortKey === 'place') ? !reverse : false; sortKey = 'place'">Place</th>
+					<th ng-click="reverse = (sortKey === 'country') ? !reverse : false; sortKey = 'country'">Country</th>
+					<th ng-click="reverse = (sortKey === 'memo') ? !reverse : false; sortKey = 'memo'">Memo</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="person in personList.persons | orderBy: sortKey || 'name'" ng-click="personList.selectPerson(person)" ng-class="{active: person == personList.selectedPerson}">
+				<tr ng-repeat="person in personList.persons | orderBy: sortKey || (sortKey = 'name') : reverse || false" ng-click="personList.selectPerson(person)" ng-class="{active: person == personList.selectedPerson}">
 					<td>{{person.name}}</td>
 					<td>{{person.role}}</td>
 					<td>{{person.place}}</td>
