@@ -38,11 +38,11 @@
 		<table style="padding-top: 20px;">
 			<thead>
 				<tr>
-					<th ng-click="reverse = (sortKey === 'name') ? !reverse : false; sortKey = 'name'">Name</th>
-					<th ng-click="reverse = (sortKey === 'role') ? !reverse : false; sortKey = 'role'">Role</th>
-					<th ng-click="reverse = (sortKey === 'place') ? !reverse : false; sortKey = 'place'">Place</th>
-					<th ng-click="reverse = (sortKey === 'country') ? !reverse : false; sortKey = 'country'">Country</th>
-					<th ng-click="reverse = (sortKey === 'memo') ? !reverse : false; sortKey = 'memo'">Memo</th>
+					<th style="cursor: pointer;" ng-click="reverse = (sortKey === 'name') ? !reverse : false; sortKey = 'name'">Name <span ng-style=""></span></th>
+					<th style="cursor: pointer;" ng-click="reverse = (sortKey === 'role') ? !reverse : false; sortKey = 'role'">Role</th>
+					<th style="cursor: pointer;" ng-click="reverse = (sortKey === 'place') ? !reverse : false; sortKey = 'place'">Place</th>
+					<th style="cursor: pointer;" ng-click="reverse = (sortKey === 'country') ? !reverse : false; sortKey = 'country'">Country</th>
+					<th style="cursor: pointer;" ng-click="reverse = (sortKey === 'memo') ? !reverse : false; sortKey = 'memo'">Memo</th>
 				</tr>
 			</thead>
 			<tbody>
