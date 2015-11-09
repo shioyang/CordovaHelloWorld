@@ -2,40 +2,41 @@
 <html ng-app="personListApp">
 	<head>
 		<link rel="stylesheet" href="css/onsenui.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<script src="js/angular.min.js"></script>
 		<script src="js/ngStorage.min.js"></script>
 		<script src="js/onsenui.js"></script>
 		<script src="js/personListApp.js"></script>
 		<script src="js/services.js"></script>
 	</head>
-	<body ng-controller="PersonList as personList">
+	<body ng-controller="PersonList as personList" style="padding: 20px;">
 		<form>
 			<table>
 				<tbody>
-					<tr>
+					<tr class="form-group">
 						<th>Name *:</th>
-						<td><input type="text" ng-model="personList.person.name" placeholder="first last" /></td>
+						<td><input class="form-control" type="text" ng-model="personList.person.name" placeholder="first last" /></td>
 					</tr>
-					<tr>
+					<tr class="form-group">
 						<th>Role:</th>
-						<td><input type="text" ng-model="personList.person.role" placeholder="UX, back-end dev., QA, etc." /></td>
+						<td><input class="form-control" type="text" ng-model="personList.person.role" placeholder="UX, back-end dev., QA, etc." /></td>
 					</tr>
-					<tr>
+					<tr class="form-group">
 						<th>Place:</th>
-						<td><input type="text" ng-model="personList.person.place" placeholder="Boebligen, San Jose, etc." /></td>
+						<td><input class="form-control" type="text" ng-model="personList.person.place" placeholder="Boebligen, San Jose, etc." /></td>
 					</tr>
-					<tr>
+					<tr class="form-group">
 						<th>Country:</th>
-						<td><input type="text" ng-model="personList.person.country" placeholder="Germany, West US, etc." /></td>
+						<td><input class="form-control" type="text" ng-model="personList.person.country" placeholder="Germany, West US, etc." /></td>
 					</tr>
-					<tr>
+					<tr class="form-group">
 						<th>Memo:</th>
-						<td><input type="textarea" ng-model="personList.person.memo" placeholder="" /></td>
+						<td><input class="form-control" type="textarea" ng-model="personList.person.memo" placeholder="" /></td>
 					</tr>
 			</table>
-			<button ng-click="personList.addPerson()" ng-disabled="!personList.person.name">Add</button>
+			<button class="btn" ng-click="personList.addPerson()" ng-disabled="!personList.person.name">Add</button>
 		</form>
-		<table style="padding-top: 20px;">
+		<table class="table table-striped" style="margin-top: 40px;">
 			<thead>
 				<tr>
 					<th style="cursor: pointer;" ng-click="reverse = (sortKey === 'name') ? !reverse : false; sortKey = 'name'">
@@ -66,7 +67,7 @@
 			</tbody>
 		</table>
 		<div>
-			<button ng-click="personList.deleteSelectedPerson()" ng-disabled="personList.selectedPerson === null">Delete</button>
+			<button class="btn" ng-click="personList.deleteSelectedPerson()" ng-disabled="personList.selectedPerson === null">Delete</button>
 		</div>
 	</body>
 </html>
