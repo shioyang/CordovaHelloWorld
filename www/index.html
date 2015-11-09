@@ -39,25 +39,25 @@
 		<table class="table table-striped" style="margin-top: 40px;">
 			<thead>
 				<tr>
-					<th style="cursor: pointer;" ng-click="reverse = (sortKey === 'name') ? !reverse : false; sortKey = 'name'">
+					<th style="cursor: pointer;" ng-click="reverse = (sortKey === 'name') ? !reverse : false; sortKey = 'name'" tabindex="0">
 						Name<span ng-style="(sortKey === 'name' && !!reverse) ? {visibility: 'visible'} : {visibility: 'hidden'}"> ^</span>
 					</th>
-					<th style="cursor: pointer;" ng-click="reverse = (sortKey === 'role') ? !reverse : false; sortKey = 'role'">
+					<th style="cursor: pointer;" ng-click="reverse = (sortKey === 'role') ? !reverse : false; sortKey = 'role'" tabindex="0">
 						Role<span ng-style="(sortKey === 'role' && !!reverse) ? {visibility: 'visible'} : {visibility: 'hidden'}"> ^</span>
 					</th>
-					<th style="cursor: pointer;" ng-click="reverse = (sortKey === 'place') ? !reverse : false; sortKey = 'place'">
+					<th style="cursor: pointer;" ng-click="reverse = (sortKey === 'place') ? !reverse : false; sortKey = 'place'" tabindex="0">
 						Place<span ng-style="(sortKey === 'place' && !!reverse) ? {visibility: 'visible'} : {visibility: 'hidden'}"> ^</span>
 					</th>
-					<th style="cursor: pointer;" ng-click="reverse = (sortKey === 'country') ? !reverse : false; sortKey = 'country'">
+					<th style="cursor: pointer;" ng-click="reverse = (sortKey === 'country') ? !reverse : false; sortKey = 'country'" tabindex="0">
 						Country<span ng-style="(sortKey === 'country' && !!reverse) ? {visibility: 'visible'} : {visibility: 'hidden'}"> ^</span>
 					</th>
-					<th style="cursor: pointer;" ng-click="reverse = (sortKey === 'memo') ? !reverse : false; sortKey = 'memo'">
+					<th style="cursor: pointer;" ng-click="reverse = (sortKey === 'memo') ? !reverse : false; sortKey = 'memo'" tabindex="0">
 						Memo<span ng-style="(sortKey === 'memo' && !!reverse) ? {visibility: 'visible'} : {visibility: 'hidden'}"> ^</span>
 					</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="person in personList.persons | orderBy: sortKey || (sortKey = 'name') : reverse || false" ng-click="personList.selectPerson(person)" ng-class="{active: person == personList.selectedPerson}">
+				<tr ng-repeat="person in personList.persons | orderBy: sortKey || (sortKey = 'name') : reverse || false" ng-click="personList.selectPerson(person)" ng-class="{active: person == personList.selectedPerson}" tabindex="0">
 					<td>{{person.name}}</td>
 					<td>{{person.role}}</td>
 					<td>{{person.place}}</td>
