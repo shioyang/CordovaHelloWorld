@@ -49,13 +49,24 @@
 
 		this.openDeleteConfirmationDialog = function() {
 			var modalInstance = $uibModal.open({
-				templateUrl: 'deleteModalContent.html'
+				templateUrl: 'deleteModalContent.html',
+				controller: 'DeleteConfirmationDialogCtrl'
 			});
 		};
 
 		// init
 		this.loadPersons();
 		this.resetPerson();
+	}]);
+
+	app.controller('DeleteConfirmationDialogCtrl', ['$scope', '$uibModalInstance', function($scope, $uibModalInstance) {
+		$scope.ok = function() {
+			$uibModalInstance.close();
+		};
+
+		$scope.cancel = function() {
+			$uibModalInstance.dismiss('cancel');
+		};
 	}]);
 
 })();
