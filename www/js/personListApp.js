@@ -1,7 +1,7 @@
 (function() {
-	var app = angular.module('personListApp', ['services']);
+	var app = angular.module('personListApp', ['ui.bootstrap', 'services']);
 
-	app.controller('PersonList', ['PersonFactory', function(PersonFactory) {
+	app.controller('PersonList', ['PersonFactory', '$uibModal', function(PersonFactory, $uibModal) {
 		this.persons = [];
 
 		this.person = null;
@@ -45,6 +45,12 @@
 			this.persons = newPersons;
 			this.savePersons();
 			this.selectedPerson = null;
+		};
+
+		this.openDeleteConfirmationDialog = function() {
+			var modalInstance = $uibModal.open({
+				templateUrl: 'deleteModalContent.html'
+			});
 		};
 
 		// init
