@@ -52,6 +52,10 @@
 				templateUrl: 'deleteModalContent.html',
 				controller: 'DeleteConfirmationDialogCtrl'
 			});
+			var t = this;
+			modalInstance.result.then(function() {
+				t.deleteSelectedPerson();
+			});
 		};
 
 		// init
