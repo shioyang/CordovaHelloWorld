@@ -48,9 +48,15 @@
 		};
 
 		this.openDeleteConfirmationDialog = function() {
+			var t = this;
 			var modalInstance = $uibModal.open({
 				templateUrl: 'deleteModalContent.html',
-				controller: 'DeleteConfirmationDialogCtrl'
+				controller: 'DeleteConfirmationDialogCtrl',
+				resolve: {
+					name: function() {
+						return t.selectedPerson.name;
+					}
+				}
 			});
 			var t = this;
 			modalInstance.result.then(function() {
@@ -63,7 +69,9 @@
 		this.resetPerson();
 	}]);
 
-	app.controller('DeleteConfirmationDialogCtrl', ['$scope', '$uibModalInstance', function($scope, $uibModalInstance) {
+	app.controller('DeleteConfirmationDialogCtrl', ['$scope', '$uibModalInstance', 'name', function($scope, $uibModalInstance, name) {
+		$scope.name = name;
+
 		$scope.ok = function() {
 			$uibModalInstance.close();
 		};
