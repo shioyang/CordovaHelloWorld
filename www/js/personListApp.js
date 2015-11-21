@@ -64,6 +64,12 @@
 			});
 		};
 
+		// Search
+		this.searchOptions = [
+			"Name", "Role"
+		];
+		this.searchOption = "Name";
+
 		// init
 		this.loadPersons();
 		this.resetPerson();

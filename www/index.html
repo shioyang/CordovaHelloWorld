@@ -39,18 +39,8 @@
 		</form>
 
 		<div>
-			<label>Search</label>
-			<div class="btn-group" uib-dropdown is-open="status.isopen">
-				<button id="single-button" type="button" class="btn btn-primary">Select column<span class="caret"></span></button>
-				<ul class="uib-dropdown-menu" role="menu" aria-labelledby="single-button">
-					<li role="menuitem"><a href="#">Name</a></li>
-					<li role="menuitem"><a href="#">Role</a></li>
-					<li role="menuitem"><a href="#">Place</a></li>
-					<li role="menuitem"><a href="#">Country</a></li>
-					<li class="divider"></li>
-					<li role="menuitem"><a href="#">Memo</a></li>
-				</ul>
-			</div>
+            <label>Format:</label> <select class="form-control" ng-model="personList.searchOption" ng-options="f for f in personList.searchOptions"></select>
+        </div>
 		</div>
 		<table class="table table-hover" style="margin-top: 40px;">
 			<thead>
