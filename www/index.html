@@ -38,8 +38,10 @@
 			<button class="btn btn-primary" ng-click="personList.addPerson()" ng-disabled="!personList.person.name">Add</button>
 		</form>
 
-		<div>
-            <label>Format:</label> <select class="form-control" ng-model="personList.searchOption" ng-options="f for f in personList.searchOptions"></select>
+		<div class="form-group" style="padding-top: 30px">
+            <label>Filter:</label>
+			<select class="form-control" ng-model="personList.searchOption" ng-options="f for f in personList.searchOptions"></select>
+			<input class="form-control" type="text"></input>
         </div>
 		</div>
 		<table class="table table-hover" style="margin-top: 40px;">
