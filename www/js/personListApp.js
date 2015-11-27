@@ -66,7 +66,7 @@
 
 		// Search
 		this.searchOptions = [
-			"Name", "Role"
+			"Name", "Role", "Place", "Country", "Memo"
 		];
 		this.searchOption = "Name";
 
